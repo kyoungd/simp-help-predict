@@ -1,0 +1,67 @@
+{"intents": [
+    {
+        "tag": "greetings",
+        "patterns": [
+            "hi", 
+            "hello", 
+            "hey", 
+            "good morning", 
+            "good afternoon", 
+            "good evening", 
+            "greetings", 
+            "good day", 
+            "whats up?", 
+            "how is it going?"
+        ],
+        "responses": [
+            "Hello.  How can I help you?", 
+            "Hi there.  How can I help you?", 
+            "Hi.  What can I do for you?"
+        ]
+    },
+    {
+        "tag": "overview",
+        "patterns": [
+            "what does this site do?", 
+            "what do you do?", 
+            "what benefit does this site offer?", 
+            "why should I subscribe", 
+            "why should I join", 
+            "what are the main benfits?"
+        ],
+        "responses": [
+            "Find quality trades with less work.", 
+            "automate finding quality trades.", 
+            "Spend less time looking for trades"
+        ]
+    },
+    {
+        "tag": "search",
+        "patterns": [
+            "how do I search?",
+            "how do I start?",
+            "what is the first step?",
+            "how to define search criteria?",
+            "search criteria?"
+        ],
+        "responses": [
+            "Find quality trades with less work.",
+            "automate finding quality trades.",
+            "Spend less time looking for trades"
+        ]
+    },
+    {
+        "tag": "patterns",
+        "patterns": [
+            "what are patterns?",
+            "what kinds of patterns can you search for?",
+            "what patterns do you support?",
+            "what are patterns?"
+        ],
+        "responses": [
+            "Patterns are price movements such as double top, or reversal patterns.  It is more than simple indicators.",
+            "Patterns show what the market is thinking and feeling.  ",
+            "They are technical indicators that can be used to find trades."
+        ]
+    }
+]}
