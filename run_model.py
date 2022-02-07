@@ -6,6 +6,8 @@ import random
 import json
 import pickle
 import numpy as np
+import requests
+import os
 from tensorflow.keras.models import load_model
 
 # ----- Setup -----
@@ -18,7 +20,15 @@ topics = pickle.load(open("topics.pkl", "rb"))
 model = load_model("chatbot_Model.h5")
 
 def bag_of_words(userString):
-    return np.ndarray([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0])
+    # HTTP post request to the server
+    hostUtil = os.environ.get(
+        'HOST_UTIL', 'https://simp-help-util.herokuapp.com/bag_of_words')
+    headers = {'Content-Type': 'application/json'}
+    jdata = {'question': userString}
+    r = requests.post(hostUtil, headers=headers, data=json.dumps(jdata))
+    if (r.status_code == 200):
+        return np.array(json.loads(r.json()['data']))
+    return np.array([])
 
 # chatBot:
 #       Gives a user's string a percentage value for each topic in json file
